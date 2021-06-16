@@ -53,26 +53,36 @@ const App = () => {
   const renderFields = () => {
     if (inputEmail !== "" && pressButton != false) {
       return (
-        <input
-          className={"passwordInput"}
-          key={"password"}
-          onChange={handleInputPassWord}
-          // placeholder={"密碼"}
-          required
-          type={"password"}
-        ></input>
+        <React.Fragment>
+          <input
+            className={"passwordInput"}
+            key={"password"}
+            onChange={handleInputPassWord}
+            // placeholder={"密碼"}
+            required
+            type={"password"}
+          ></input>
+          <label className={whichName()} htmlFor="password">
+            請輸入密碼
+          </label>
+        </React.Fragment>
       );
     } else {
       return (
-        <input
-          className={"emailInput"}
-          key={"email"}
-          // id={"emailInfo"}
-          onChange={handleInputChange}
-          // placeholder={"電子郵件地址或電話號碼"}
-          required
-          type={"email"}
-        ></input>
+        <React.Fragment>
+          <input
+            className={"emailInput"}
+            key={"email"}
+            // id={"emailInfo"}
+            onChange={handleInputChange}
+            // placeholder={"電子郵件地址或電話號碼"}
+            required
+            type={"email"}
+          ></input>
+          <label className={whichName()} htmlFor="email">
+            電子郵件地址或電話號碼
+          </label>
+        </React.Fragment>
       );
     }
   };
@@ -89,29 +99,31 @@ const App = () => {
     }
   };
 
-  const WhichName = () => {
-    if ((inputEmail !== "") | (inputPassword !== "")) {
+  const whichName = () => {
+    if (inputEmail !== "" && inputPassword === "") {
+      return "";
+    } else if (inputPassword !== "") {
       return "active";
     } else {
       return "";
     }
   };
 
-  const labelFloat = () => {
-    if (pressButton === true && inputPassword !== "") {
-      return (
-        <label className={WhichName()} htmlFor="password">
-          請輸入密碼
-        </label>
-      );
-    } else {
-      return (
-        <label className={WhichName()} htmlFor="email">
-          電子郵件地址或電話號碼
-        </label>
-      );
-    }
-  };
+  // const labelFloat = () => {
+  //   if (pressButton === true && inputPassword !== "") {
+  //     return (
+  //       <label className={whichName()} htmlFor="password">
+  //         請輸入密碼
+  //       </label>
+  //     );
+  //   } else {
+  //     return (
+  //       <label className={whichName()} htmlFor="email">
+  //         電子郵件地址或電話號碼
+  //       </label>
+  //     );
+  //   }
+  // };
 
   // return (
   //   <React.Fragment>
@@ -145,7 +157,7 @@ const App = () => {
         <div className={"float"}>
           {/* <form className={"formInfo"}> */}
           {renderFields()}
-          {labelFloat()}
+          {/* {labelFloat()} */}
           {/* <label className={WhichName()} htmlFor="email">
             電子郵件地址或電話號碼
           </label>
