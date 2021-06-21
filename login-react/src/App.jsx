@@ -88,21 +88,25 @@ const App = () => {
   };
 
   const pressButtonAndSubmit = () => {
+    const emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
     if (inputEmail !== "" && inputPassword == "" && pressButton == true) {
       alert("請輸入密碼");
+    } else if (inputEmail.search(emailRule) === -1) {
+      alert("Email格式不符");
+      return inputEmail == "";
     } else if (inputEmail !== "" && inputPassword == "") {
       handlePressButton();
     } else if (inputEmail !== "" && inputPassword !== "") {
       handleSubmit();
     } else {
-      alert("請輸入信箱");
+      alert("請輸入郵件地址或電話號碼");
     }
   };
 
   const whichName = () => {
-    if (inputEmail !== "" && inputPassword === "") {
+    if (inputEmail !== "" && inputPassword === "" && pressButton == true) {
       return "";
-    } else if (inputPassword !== "") {
+    } else if (inputEmail !== "" || inputPassword !== "") {
       return "active";
     } else {
       return "";
@@ -172,7 +176,10 @@ const App = () => {
         </a>
         <p className={"string2"}>
           如果這不是你的電腦， 請使用訪客模式以私密方式登入。
-          <a href={"https://www.google.com/"} className={"know"}>
+          <a
+            href={"https://support.google.com/chrome/answer/6130773?hl=zh-Hant"}
+            className={"know"}
+          >
             暸解詳情
           </a>
         </p>
@@ -200,9 +207,26 @@ const App = () => {
           </select>
         </div>
         <div className={"btn"}>
-          <button> 說明 </button>
+          <a
+            href={
+              "https://support.google.com/accounts/?hl=zh-Hant#topic=3382296"
+            }
+          >
+            說明
+          </a>
+          <a href={"https://policies.google.com/privacy?gl=TW&hl=zh-TW"}>
+            隱私權
+          </a>
+          <a href={"https://policies.google.com/terms?gl=TW&hl=zh-TW"}>條款</a>
+          {/* <button
+            onClick={
+              "location.href='https://support.google.com/accounts/?hl=zh-Hant#topic=3382296'"
+            }
+          >
+            說明
+          </button>
           <button> 隱私權 </button>
-          <button> 條款 </button>
+          <button> 條款 </button> */}
         </div>
       </div>
     </div>

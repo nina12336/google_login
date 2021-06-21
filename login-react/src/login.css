@@ -125,20 +125,23 @@
 .list {
     border: none;
     margin: 20px 0 0 0;
+    font-size: 13px;
 }
 
 .btn {
     margin: 20px 0 0 0;
-    width: 180px;
+    width: 150px;
     display: flex;
     justify-content: space-between;
 }
 
-.btn>button {
-    border: none;
+.btn>a {
+    /* border: none; */
     background-color: #fff;
     color: #495057;
     font-weight: bold;
+    text-decoration: none;
+    font-size: 13px
 }
 
 /* .formInfo {
