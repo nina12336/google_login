@@ -1,0 +1,183 @@
+$linkColor:#1e96fc;
+$borderColor:#CECACE;
+$inputColor:#817774;
+$stringColor:#495057;
+
+
+
+.container {
+    width: inherit;
+    height: inherit;
+    display: grid;
+    margin: 150px;
+}
+
+.loginArea {
+    width: 400px;
+    height: 500px;
+    border: 1px solid $borderColor;
+    margin: auto;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "STHeiti";
+}
+
+
+.logo {
+    background-color: #82ac9f;
+    width: 90px;
+    height: 60px;
+    margin: 30px 0px 15px 0px;
+
+    img {
+        width: inherit;
+        object-fit: cover;
+    }
+}
+
+.string {
+    line-height: 1;
+    margin: 0px 0px 20px 0px;
+
+    h2 {
+        margin: 0 0 15px 0;
+        text-align: center;
+        font-size: 25px;
+    }
+
+    h3 {
+        margin: 0 0 20px 0;
+        text-align: center;
+        font-size: 15px;
+    }
+}
+
+.emailInput {
+    font-size: 17px;
+    width: 300px;
+    height: 50px;
+    margin: 0 0 -10px 0;
+    color: $inputColor;
+    border: 1px solid;
+    border-color: $borderColor;
+    border-radius: 5px;
+}
+
+:focus-within .emailInput {
+    border-color: $linkColor;
+    border-width: 2px;
+}
+
+.passwordInput {
+    font-size: 17px;
+    width: 300px;
+    height: 50px;
+    color: $inputColor;
+    border: 1px solid;
+    border-color: $borderColor;
+    border-radius: 5px;
+}
+
+.forget {
+    text-decoration: none;
+    color: $linkColor;
+    margin: 0 0 0 -10px;
+    padding: 5px 150px 10px 0px;
+}
+
+.string2 {
+    color: $stringColor;
+    padding: 35px 25px 45px 44px;
+
+    .know {
+        text-decoration: none;
+        color: #1e96fc;
+    }
+}
+
+.create {
+    margin: 0 0 0 44px;
+    text-decoration: none;
+    color: $linkColor;
+}
+
+.continue {
+    background-color: $linkColor;
+    font-size: 15px;
+    border: none;
+    color: white;
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 0 40px 0 0;
+}
+
+.click1 {
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+}
+
+.click2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;
+    margin: auto;
+}
+
+.list {
+    border: none;
+    margin: 20px 0 0 0;
+    font-size: 13px;
+}
+
+.btn {
+    margin: 20px 0 0 0;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        background-color: #fff;
+        color: $stringColor;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 13px
+    }
+}
+
+.float {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    label {
+        color: #999;
+        flex-direction: column;
+        position: absolute;
+        transform: translate(15px, 21px) scale(1);
+        transform-origin: top left;
+        transition: all 0.2s ease-out;
+    }
+
+    .active {
+        background-color: white;
+        transform: translate(10px, -8px) scale(0.95);
+        color: $linkColor;
+    }
+
+    // :focus-within label {
+    //     background-color: white;
+    //     transform: translate(10px, -8px) scale(0.95);
+    //     color: $linkColor;
+    // }
+}
+
+:focus-within label {
+    background-color: white;
+    transform: translate(10px, -8px) scale(0.95);
+    color: $linkColor;
+}

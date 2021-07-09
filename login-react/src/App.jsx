@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./login.css";
 import "./reset.css";
+import "./styles/style.css";
 import logoimg from "./Google.jpg";
 // import Fetch from "./Fetch.js";
 
