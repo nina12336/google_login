@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./reset.css";
 import "./styles/style.css";
 import logoimg from "./Google.jpg";
-// import Fetch from "./Fetch.js";
 
 const App = () => {
   var [inputEmail, setInputEmail] = useState("");
@@ -12,7 +11,6 @@ const App = () => {
   };
   var [inputPassword, setInputPassword] = useState("");
   const handleInputPassWord = (n) => {
-    // console.log(n.target.value);
     setInputPassword(n.target.value);
     console.log(inputPassword);
     console.log({ inputPassword });
@@ -58,7 +56,6 @@ const App = () => {
             className={"passwordInput"}
             key={"password"}
             onChange={handleInputPassWord}
-            // placeholder={"密碼"}
             required
             type={"password"}
           ></input>
@@ -73,9 +70,7 @@ const App = () => {
           <input
             className={"emailInput"}
             key={"email"}
-            // id={"emailInfo"}
             onChange={handleInputChange}
-            // placeholder={"電子郵件地址或電話號碼"}
             required
             type={"email"}
           ></input>
@@ -113,41 +108,6 @@ const App = () => {
     }
   };
 
-  // const labelFloat = () => {
-  //   if (pressButton === true && inputPassword !== "") {
-  //     return (
-  //       <label className={whichName()} htmlFor="password">
-  //         請輸入密碼
-  //       </label>
-  //     );
-  //   } else {
-  //     return (
-  //       <label className={whichName()} htmlFor="email">
-  //         電子郵件地址或電話號碼
-  //       </label>
-  //     );
-  //   }
-  // };
-
-  // return (
-  //   <React.Fragment>
-  //     <input
-  //       className={"emailInput"}
-  //       onChange={handleInputChange}
-  //       placeholder={"電子郵件地址或電話號碼"}
-  //       required
-  //       type={"text"}
-  //     ></input>
-  //     <input
-  //       className={"passwordInput"}
-  //       onChange={handleInputPassWord}
-  //       placeholder={"密碼"}
-  //       required
-  //       type={"text"}
-  //     ></input>
-  //   </React.Fragment>
-  // );
-
   return (
     <div className={"container"}>
       <div className={"loginArea"}>
@@ -158,18 +118,7 @@ const App = () => {
           <h2> 登入 </h2>
           <h3> 使用您的Google帳戶 </h3>
         </div>
-        <div className={"float"}>
-          {/* <form className={"formInfo"}> */}
-          {renderFields()}
-          {/* {labelFloat()} */}
-          {/* <label className={WhichName()} htmlFor="email">
-            電子郵件地址或電話號碼
-          </label>
-          <label className={WhichName()} htmlFor="password">
-            密碼
-          </label> */}
-          {/* </form> */}
-        </div>
+        <div className={"float"}>{renderFields()}</div>
         <br />
         <a href={"https://www.google.com/"} className={"forget"}>
           忘記電子郵件地址？
@@ -194,9 +143,6 @@ const App = () => {
           >
             繼續
           </button>
-          {/* <button className={"continue"} onClick={handleSubmit} type={"button"}>
-            送出
-          </button> */}
         </div>
       </div>
       <div className={"click2"}>
@@ -218,15 +164,6 @@ const App = () => {
             隱私權
           </a>
           <a href={"https://policies.google.com/terms?gl=TW&hl=zh-TW"}>條款</a>
-          {/* <button
-            onClick={
-              "location.href='https://support.google.com/accounts/?hl=zh-Hant#topic=3382296'"
-            }
-          >
-            說明
-          </button>
-          <button> 隱私權 </button>
-          <button> 條款 </button> */}
         </div>
       </div>
     </div>
